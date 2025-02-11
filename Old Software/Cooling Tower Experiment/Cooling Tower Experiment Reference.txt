@@ -1,0 +1,22 @@
+***This refers to the latest VI as of 11/22/2016***
+
+Brief Set-up:
+	"Cooling Tower Experiment v1_0" VI is the only application that will be used for this experiment. In order for the program to function properly make sure that the relay box is plugged in (Orange male plug). It contains the relays to control the Heating Element and Stirrer (Heater Pump), as well as the voltage source needed for the NI 9472. However, the pump and the fan operate outside of LabView. The fan will plug into the small variac (Powerstat) to control the speed and the water flow rate will be controlled using the flow valve, both located in front of the experiment (pump will be plugged in when ready to start data collection).
+
+Cooling Tower Experiment v1_0:
+	Records temperature from 6 thermocouples (minus "Reservoir Temp") and controls the immersion heater. The Reservoir Temperature can be set but not exceed 60 C, as well as independently control the heating element and heater pump. There is an option to continuously record data points via the "Continuous Plotting" Switich or recording single data points by pressing "Plot and Save" button. It will NOT begin recording until the "Record" Button is pressed. The graph can be cleared anyting using the "Reset" Button
+
+***Operation
+1) Set Reservoir Temperature to chosen value
+
+2) Click the Single Run button located towards the top, and create a save file
+
+3) Set Fan Speed, plug in pump, and set flow rate; Use Handheld Anemometer to measure air flow speed.
+
+4) Click "Record" to start recording data anytime during the experiment; Switching the "Continuous Plotting?" before will automatically start recording as soon as the "Record" Button is pressed.
+
+5) When done with a trial, click "shut down" to stop the immersion heater and application.
+
+*Note:
+-There is an option to shut off the heating element and/or the heater pump to add more variety to the trials.
+-WARNING: At low waterflow rates (<0.7 GPM), measurements tend to drift; Manually adjust the flow meter to maintain the same flow rate 

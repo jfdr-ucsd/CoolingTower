@@ -1,0 +1,17 @@
+***This is reference to the latest VI as of 11/22/2016***
+
+"Temp PID v1_0" subVI was developed using the instructional PID controller used in CENG 176 pH Controller Experiment. Similar to any other simple Temperature controller, depending on the direction of the controller output (negative or positive) it will turn off or on the heating element located behind the tower. The PID is was written in ideal form and only the following parameters can be adjusted:
+
+Kc = Controller Gain; if using Proportional Band, Kc=100/Pb
+Ti = Intergral Time
+Td = Derivative time
+
+*Note: The default parameters were found through trials and observing the trends in the empirical data. However, feel free to use any of the tuning methods you have the most experience with.
+
+Changing Tuning Parameters:
+*Depends on tuning method is chosen*
+1) Change tuning parameters to new inputs
+
+2) Click Edit and select "Make Current Values Default"
+
+3) Or, change one parameter at a time, right click the control, highlight "Data Operations", and select "Make Current Values Default"

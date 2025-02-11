@@ -1,0 +1,40 @@
+****TA, Instructor, and Technical Staff ONLY!!!****
+
+***This refers to the latest VI as of 11/23/2016***
+
+***Cooling Tower Experiment v1_0.vi Technical Breakdown***
+
+	Cooling Tower Experiment v1_0 VI reads and records temperature measurements from the mini Cooling Tower, and is capable of maintaining a constant reservoir temperature via Temperature Controller (PID; Reservoir Temperature has to be <= 60 C). It allows students the option to continuously record temperatures or record temperatures on command, as well as setting the reservior temperature and switching the heat element and heater pump on/off. It will only record if the student clicks the "Record" button. *Note: Make sure the Relay Box is plugged in (Orange Male Plug); Needed for the VI to work properly.
+
+	Cooling Tower Experiment v1_0.vi requires the following subVIs to function Properly:
+***All subVIs are located in the subVI folder; C:\Users\CENG 176\Desktop\Cooling Tower Experiment\SubVI***
+
+Thermocouple Read.vi:
+Reads the 7 thermocouples from the two NI 9211 modules:
+1) Outlet Water Temperature
+2) Inlet Water Temperature
+3) Outlet Dry Bulb Temperature
+4) Outlet Wet Bulb Temperature
+5) Inlet Wet Bulb Temperature
+6) Inlet Dry Bulb Temperature
+7) Reservoir Temperature -- Needed for the Temperature Controller v1_0 VI
+	The Module is able to measure a K-type thermocouple with an error less than 0.05 degrees C (low frequency noise). The subVI is design to round to the nearest 0.1 degree C to eliminate noise and improve the performance of the controller.
+
+Temperature Controller v1_0.vi:
+	Switches on/off the heating element and heater pump from the immersion heater, and maintains a constant reservoir temperature. It does NOT control the amount of power to the heating element, rather switches it on or off depending if on the direction of the controller output (negative or positive; similar to any temperature controller). It utilizes the PID Controller similar to that found in the pH Controller Experiment (CENG 176). The tunning parameters were found through trials and empirical data, but if needed to be changed, refer to "Changing Tuning Parameters" (First find new tuning parameters). *Note: Turning off heating element will also turn off the PID controller*
+
+Temp PID v1_0.vi:
+	*Needed for Temperature Controller v1_0.vi* 
+	Simple PID that was orginally used for instructional purposes. It is written in Ideal Form with anti-Wind up.
+
+**Operation
+1) Click Single Run to start the application and create a save file; Either before or after doing so, the student will set a desired Reservoir Temperature. (VI should not allow values greater than 60 C)
+
+2) Once Target Temperature is reached or whenever students are ready, they should click "Record" to start saving temperatures. They can choose to switch on "Continuous PLotting" to start recording as soon as they click "Record", or they can record on command by clicking "Plot and Save".
+
+3) When strudents are done with a trial, they should only click "Done" and it will shut off the experiment.
+
+*Note: 
+1. Water Pump and Fan are controlled manually. Pump needs to be plugged in to turn on and flow rate is adjusted by flow value. Fan should always be plugged into and controlled by the variac (Powerstat). Air flow is measured by handheld Anemometer.
+2. There is an option to turn on/off the heating element and heater pump anytime while the application is running. 
+3. There is an option to clear off the graph at anytime while recording.
